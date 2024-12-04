@@ -8,7 +8,7 @@ const camera = new SPLAT.Camera();
 const controls = new SPLAT.OrbitControls(camera, canvas);
 
 async function main() {
-    const url = "";
+    const url = "images/splats/bonsai-7k.splat";
 
     await SPLAT.Loader.LoadAsync(url, scene, null);
 
