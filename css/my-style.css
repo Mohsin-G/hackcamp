@@ -5,20 +5,19 @@
 
 }
 #menu {
-    border-top: solid 6px #f00;
-    background-color: #f00;
+
     color: #fff;
     /*height: 400px;*/
 }
 
 #menu a {
-    background-color: #f00;
+
     color: #fff;
     text-decoration: none;
     display: block;
 }
 #menu a:hover {
-    background-color: #f00;
+
     color: #ddd;
     text-decoration:underline;
     display: block;
@@ -26,7 +25,7 @@
 
 #content {
     background-color: #fff;
-    border-top: solid 6px #f00;
+
 
 }
 
