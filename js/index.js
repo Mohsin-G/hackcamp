@@ -9,20 +9,11 @@ const controls = new SPLAT.OrbitControls(camera, canvas);
 
 
 const fpsDisplay = document.getElementById("FPS");
-fpsDisplay.style.position = "absolute";
-fpsDisplay.style.top = "10px";
-fpsDisplay.style.left = "10px";
-fpsDisplay.style.color = "white";
-fpsDisplay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-fpsDisplay.style.padding = "5px 10px";
-fpsDisplay.style.fontFamily = "Arial, sans-serif";
-fpsDisplay.style.fontSize = "14px";
-fpsDisplay.style.zIndex = "1000";
 document.body.appendChild(fpsDisplay);
 
 
 async function main() {
-    const splatFile = "images/splats/500.1_pictures.splat";
+    const splatFile = "images/splats/bench500pic.splat";
 
     await SPLAT.Loader.LoadAsync(splatFile, scene, null);
 
