@@ -22,7 +22,7 @@ document.body.appendChild(fpsDisplay);
 
 
 async function main() {
-    const splatFile = "images/splats/model (3).splat";
+    const splatFile = "images/splats/500.1_pictures.splat";
 
     await SPLAT.Loader.LoadAsync(splatFile, scene, null);
 
