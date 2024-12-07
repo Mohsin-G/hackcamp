@@ -8,7 +8,7 @@ const camera = new SPLAT.Camera();
 const controls = new SPLAT.OrbitControls(camera, canvas);
 
 async function main() {
-    const splatFile = "images/splats/model (3).splat";
+    const splatFile = "images/splats/500.1_pictures.splat";
 
     await SPLAT.Loader.LoadAsync(splatFile, scene, null);
 
