@@ -38,6 +38,15 @@ async function main() {
             frameCount = 0;
         }
 
+        //This is for making the Splat view not zoom in twice
+        const splineContainer = document.getElementById("splineContainer");
+
+        // Disable browser zoom inside the container
+        splineContainer.addEventListener("wheel", (event) => {
+            if (event.ctrlKey) {
+                event.preventDefault(); // Prevent browser zoom
+            }
+        });
 
     };
 
