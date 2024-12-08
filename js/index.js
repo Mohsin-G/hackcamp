@@ -11,14 +11,13 @@ const controls = new SPLAT.OrbitControls(camera, canvas);
 const fpsDisplay = document.getElementById("FPS");
 document.body.appendChild(fpsDisplay);
 
-
 async function main() {
     const splatFile = "images/splats/bench500pic.splat";
-
     await SPLAT.Loader.LoadAsync(splatFile, scene, null);
 
     const handleResize = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
+
     };
     let lastTime = performance.now();
     let frameCount = 0;
