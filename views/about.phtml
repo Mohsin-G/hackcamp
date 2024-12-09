@@ -1,0 +1,28 @@
+<?php require_once('template/header.phtml'); ?>
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h1 class="card-title mb-4 display-4 text-center">About 3D Gaussian Splatting</h1>
+                    <p class="card-text mb-3 fs-5">
+                        3D Gaussian splatting is an advanced technique for representing and rendering complex
+                        three-dimensional scenes. Rather than relying solely on traditional polygonal meshes, this
+                        approach utilizes collections of overlapping, smoothly blended Gaussian "splats" to define
+                        the geometry and appearance of objects or environments.
+                    </p>
+                    <p class="card-text mb-0 fs-5">
+                        By distributing spatially varying Gaussian functions throughout 3D space, this method
+                        effectively captures subtle surface details, handles transparency and semi-opaque materials,
+                        and produces smooth transitions between different parts of a scene. Moreover, Gaussian
+                        splatting enables data-driven rendering, allowing for adaptive levels of detail and highly
+                        realistic visualizations, even for intricate and detailed models.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<?php require_once('template/footer.phtml'); ?>
