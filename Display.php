@@ -1,8 +1,6 @@
 <?php
-// If you need images here, define them before including display.phtml
-$images = [
-    // ... some data here if needed ...
-];
+// Get the model name from the query parameter
+$model = isset($_GET['model']) ? $_GET['model'] : 'bench500pic.splat';
 
-// Now include display.phtml
+// Now include display.phtml and pass the $model variable
 require('views/Display.phtml');
