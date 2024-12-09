@@ -1,25 +1,23 @@
 import * as SPLAT from "https://cdn.jsdelivr.net/npm/gsplat@latest";
 
 const canvas = document.getElementById("canvas");
-
 const renderer = new SPLAT.WebGLRenderer(canvas);
 const scene = new SPLAT.Scene();
 const camera = new SPLAT.Camera();
 const controls = new SPLAT.OrbitControls(camera, canvas);
 
-
 const fpsDisplay = document.getElementById("FPS");
 document.body.appendChild(fpsDisplay);
 
+// Use the modelFile variable defined in display.phtml
 async function main() {
-    const splatFile = "images/bench500pic.splat  ";
+    const splatFile = "images/" + modelFile;  // dynamically load based on selection
     await SPLAT.Loader.LoadAsync(splatFile, scene, null);
-
 
     const handleResize = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
-
     };
+
     let lastTime = performance.now();
     let frameCount = 0;
 
@@ -39,22 +37,19 @@ async function main() {
             frameCount = 0;
         }
 
-        //This is for making the Splat view not zoom in twice
+        // Disable browser zoom inside the container (if needed)
         const splineContainer = document.getElementById("splineContainer");
-
-        // Disable browser zoom inside the container
-        splineContainer.addEventListener("wheel", (event) => {
-            if (event.ctrlKey) {
-                event.preventDefault(); // Prevent browser zoom
-            }
-        });
-
+        if (splineContainer) {
+            splineContainer.addEventListener("wheel", (event) => {
+                if (event.ctrlKey) {
+                    event.preventDefault(); // Prevent browser zoom
+                }
+            });
+        }
     };
-
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
     requestAnimationFrame(frame);
 }
 
