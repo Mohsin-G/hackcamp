@@ -1,8 +1,4 @@
 <?php
-
-//Testing
-//qqq
-
-$view = new stdClass();
-$view->pageTitle = 'Homepage';
-require_once('Views/index.phtml');
+require_once('models/imageModel.php');
+$images = ImageModel::getImages();
+require_once('views/index.phtml');

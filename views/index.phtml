@@ -1,18 +1,68 @@
-<?php require('template/header.phtml') ?>
+<?php require_once ("template/header.phtml")?>
 
-<body role="document">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>3D Projects Viewer</title>
 
-<div id="controlArea">
+    <!-- Swiper CSS (CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
 
-    <canvas id="canvas" >
-        <div id="Details">
-            <p id="FPS"></p>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+            rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/my_style.css">
+</head>
+<body>
+<header class="header">
+
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <h1 class="page-title">3D Models Gallery</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <?php foreach($images as $image): ?>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="card-img"
+                                     src="<?= htmlspecialchars($image['src']) ?>"
+                                     alt="<?= htmlspecialchars($image['title']) ?>" />
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title"><?= htmlspecialchars($image['title']) ?></h2>
+                                <p class="card-description"><?= htmlspecialchars($image['description']) ?></p>
+                                <a href="<?= htmlspecialchars($image['url']) ?>" class="card-button" id="click">View The Model</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-    </canvas>
+    </div>
+</main>
 
-</div>
 
+<!-- Swiper JS (CDN) -->
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="/js/script.js"></script>
+</body>
+</html>
 
-<script src="js/index.js" type="module"></script>
-
-<?php require('template/footer.phtml')?>
+<?php require_once "template/footer.phtml" ?>
