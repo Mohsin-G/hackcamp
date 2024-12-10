@@ -1,8 +1,14 @@
 <?php
-// If you need images here, define them before including display.phtml
-$images = [
-    // ... some data here if needed ...
-];
 
-// Now include display.phtml
+$view = new stdClass();
+$view->pageTitle = 'Display';
+
+// Get the model name from the query parameter
+if (isset($_GET['model'])) {
+    $model = $_GET['model'];
+}
+
+
+
+// Now include display.phtml and pass the $model variable
 require('views/Display.phtml');
