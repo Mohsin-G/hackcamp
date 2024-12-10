@@ -5,9 +5,10 @@ const renderer = new SPLAT.WebGLRenderer(canvas);
 const scene = new SPLAT.Scene();
 const camera = new SPLAT.Camera();
 const controls = new SPLAT.OrbitControls(camera, canvas);
-
+const  fileInput = document.getElementById("splatInput");
 const fpsDisplay = document.getElementById("FPS");
 document.body.appendChild(fpsDisplay);
+
 
 // Use the modelFile variable defined in display.phtml
 async function main() {

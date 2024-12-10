@@ -6,15 +6,26 @@ const renderer = new SPLAT.WebGLRenderer(canvas);
 const scene = new SPLAT.Scene();
 const camera = new SPLAT.Camera();
 const controls = new SPLAT.OrbitControls(camera, canvas);
-
-
+const  fileInput = document.getElementById("splatInput");
 const fpsDisplay = document.getElementById("FPS");
+
+
 document.body.appendChild(fpsDisplay);
 
-async function main() {
-    const splatFile = "images/bench500pic.splat  ";
-    await SPLAT.Loader.LoadAsync(splatFile, scene, null);
+async function loadSplat(file) {
+    // Create a Blob URL for the file
+    const inputURL = URL.createObjectURL(file);
 
+
+    scene.reset();
+    // Load the new splat file into the scene
+    await SPLAT.Loader.LoadAsync(inputURL, scene, null);
+
+    // Revoke the Blob URL to free memory
+    URL.revokeObjectURL(inputURL);
+}
+
+async function main() {
 
     const handleResize = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -39,15 +50,6 @@ async function main() {
             frameCount = 0;
         }
 
-        //This is for making the Splat view not zoom in twice
-        const splineContainer = document.getElementById("splineContainer");
-
-        // Disable browser zoom inside the container
-        splineContainer.addEventListener("wheel", (event) => {
-            if (event.ctrlKey) {
-                event.preventDefault(); // Prevent browser zoom
-            }
-        });
 
     };
 
@@ -57,5 +59,16 @@ async function main() {
 
     requestAnimationFrame(frame);
 }
-
+// Handle file input change
+fileInput.addEventListener("change", async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        try {
+            await loadSplat(file);
+            console.log("Splat file loaded successfully!");
+        } catch (error) {
+            console.error("Failed to load splat file:", error);
+        }
+    }
+});
 main();

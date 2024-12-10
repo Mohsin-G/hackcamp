@@ -1,0 +1,21 @@
+<?php require('template/header.phtml') ?>
+
+    <body role="document">
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" id="splatInput" accept=".splat">
+        <label class="input-group-text" for="splatInput">Upload</label>
+    </div>
+    <div id="controlArea">
+
+        <canvas id="canvas" >
+            <div id="Details">
+                <p id="FPS"></p>
+            </div>
+        </canvas>
+
+    </div>
+
+
+    <script src="js/upload.js" type="module"></script>
+
+<?php require('template/footer.phtml')?>

@@ -16,7 +16,7 @@
     color: white;
     position:absolute;
 
-    top :80px;
+    top :100px;
     left : 80px;
 
 }
@@ -333,6 +333,7 @@ body {
     flex-shrink: 0;
     order: 9999;
 }
+
 .swiper-css-mode.swiper-centered > .swiper-wrapper > .swiper-slide {
     scroll-snap-align: center center;
     scroll-snap-stop: always;
@@ -413,6 +414,7 @@ body {
 .swiper-lazy-preloader-black {
     --swiper-preloader-color: #000;
 }
+
 @keyframes swiper-preloader-spin {
     0% {
         transform: rotate(0deg);
