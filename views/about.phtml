@@ -5,19 +5,29 @@
         <div class="col-md-10 col-lg-8">
             <div class="card shadow-sm border-0">
                 <div class="card-body p-4">
-                    <h1 class="card-title mb-4 display-4 text-center">About 3D Gaussian Splatting</h1>
-                    <p class="card-text mb-3 fs-5">
-                        3D Gaussian splatting is an advanced technique for representing and rendering complex
+                    <h1 class="card-title mb-1 display-4 text-start">3D Gaussian Splatting</h1>
+                    <p class="card-text mb-2 fs-5">
+                        Gaussian splatting is an advanced technique for representing and rendering complex
                         three-dimensional scenes. Rather than relying solely on traditional polygonal meshes, this
                         approach utilizes collections of overlapping, smoothly blended Gaussian "splats" to define
                         the geometry and appearance of objects or environments.
                     </p>
-                    <p class="card-text mb-0 fs-5">
+                    <p class="card-text mb-4 fs-5">
                         By distributing spatially varying Gaussian functions throughout 3D space, this method
                         effectively captures subtle surface details, handles transparency and semi-opaque materials,
                         and produces smooth transitions between different parts of a scene. Moreover, Gaussian
                         splatting enables data-driven rendering, allowing for adaptive levels of detail and highly
                         realistic visualizations, even for intricate and detailed models.
+                    </p>
+                    <h1 class="card-title mb-1 display-4 text-start">Libraries used</h1>
+                    <p class="card-text mb-3 fs-5">
+                        <strong><a href="https://github.com/huggingface/gsplat.js" target="_blank">gsplat.js</a></strong>: This library was essential for rendering the 3D models directly in the browser and making it user-friendly.
+                    </p>
+                    <p class="card-text mb-3 fs-5">
+                        <strong><a href="https://github.com/jonstephens85/gaussian-splatting-Windows" target="_blank">Gaussian Splatting AI Model</a></strong>: This tool was used to convert raw data into 3D models for the chair and bottle.
+                    </p>
+                    <p class="card-text mb-3 fs-5">
+                        <strong><a href="https://poly.cam/tools/gaussian-splatting" target="_blank">Polycam</a></strong>: A tool for generating the high-quality 3D bench model. Its capabilities allowed us to achieve more detailed textures and better realism.
                     </p>
                 </div>
             </div>
