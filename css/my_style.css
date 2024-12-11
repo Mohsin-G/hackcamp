@@ -16,8 +16,8 @@
     color: white;
     position:absolute;
 
-    bottom :50px;
-    left : 80px;
+    bottom :350px;
+    left : 60px;
 
 }
 #controlArea{
@@ -77,7 +77,7 @@ body {
     transition: color 0.3s ease;
 }
 .nav-link:hover {
-    color: #CA0000;
+    color: #909090;
 }
 
 /* Main Content */
@@ -160,6 +160,7 @@ body {
 
 .card-button:hover {
     background: #a00000;
+    color: #e1e1e1;
 }
 
 /* Swiper Customizations */
