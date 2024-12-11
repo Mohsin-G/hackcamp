@@ -9,6 +9,5 @@ if (isset($_GET['model'])) {
 }
 
 
-
 // Now include display.phtml and pass the $model variable
 require('views/Display.phtml');

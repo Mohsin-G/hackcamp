@@ -13,16 +13,22 @@ const fpsDisplay = document.getElementById("FPS");
 document.body.appendChild(fpsDisplay);
 
 async function loadSplat(file) {
-    // Create a Blob URL for the file
-    const inputURL = URL.createObjectURL(file);
+    // Create a URL for the file
+    if (file.name.endsWith('.splat')){
+        document.getElementById("errorMessage").innerHTML="";
+        const inputURL = URL.createObjectURL(file);
 
 
-    scene.reset();
-    // Load the new splat file into the scene
-    await SPLAT.Loader.LoadAsync(inputURL, scene, null);
+        scene.reset();
+        // Load the new splat file into the scene
+        await SPLAT.Loader.LoadAsync(inputURL, scene, null);
 
-    // Revoke the Blob URL to free memory
-    URL.revokeObjectURL(inputURL);
+        // Revoke the Blob URL to free memory
+        URL.revokeObjectURL(inputURL);
+    }else{
+    document.getElementById("errorMessage").innerHTML="Error: Please Input a .splat file";
+    }
+
 }
 
 async function main() {
